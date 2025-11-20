@@ -1,0 +1,73 @@
+---
+import V2Layout from "../../../layouts/V2Layout.astro";
+import ImageGalleryV2 from "../../../components/ImageGalleryV2.astro";
+
+const oilPaintings = [
+  "/images/kepek/olaj01.jpg",
+  "/images/kepek/olaj02.jpg",
+  "/images/kepek/olaj03.jpg",
+  "/images/kepek/olaj05.jpg",
+  "/images/kepek/olaj07.jpg",
+  "/images/kepek/olaj08.jpg",
+  "/images/kepek/olaj09.jpg",
+  "/images/kepek/olaj10.jpg",
+  "/images/kepek/olaj11.jpg",
+  "/images/kepek/olaj12.jpg",
+  "/images/kepek/olaj13.jpg",
+  "/images/kepek/olaj14.jpg",
+  "/images/kepek/olaj15.jpg",
+  "/images/kepek/olaj16.jpg",
+  "/images/kepek/olaj18.jpg",
+  "/images/kepek/olaj19.jpg",
+  "/images/kepek/olaj20.jpg",
+  "/images/kepek/olaj21.jpg",
+];
+---
+
+<V2Layout
+  title="Olajfestmények - Szarvas Pongrác"
+  description="Szarvas Pongrác olajfestményei"
+>
+  <section class="py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Olajfestmények
+        </h1>
+        <p class="text-lg text-gray-600">
+          Természet és vadászat témájú olajfestmények
+        </p>
+      </div>
+
+      <!-- Image Gallery -->
+      <ImageGalleryV2
+        images={oilPaintings}
+        title="Olajfestmény"
+      />
+
+      <!-- Back Navigation -->
+      <div class="mt-12 text-center">
+        <a
+          href="/v2/kepzomuveszet"
+          class="inline-flex items-center px-6 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-700 transition-colors duration-200"
+        >
+          <svg
+            class="w-5 h-5 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            ></path>
+          </svg>
+          Vissza a Képzőművészethez
+        </a>
+      </div>
+    </div>
+  </section>
+</V2Layout>
+

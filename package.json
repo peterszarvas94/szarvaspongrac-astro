@@ -16,6 +16,7 @@
     "astro": "^5.15.9",
     "lucide": "^0.554.0",
     "lucide-astro": "^0.554.0",
+    "opencode-ai": "^1.0.80",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
     "tailwindcss": "^4.1.17"
