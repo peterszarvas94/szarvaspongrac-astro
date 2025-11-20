@@ -3,7 +3,7 @@ export interface Props {
   href: string;
   title: string;
   icon: any;
-  hoverColor: "primary" | "secondary" | "accent" | "blue" | "green" | "purple" | "orange";
+  hoverColor: "primary" | "secondary" | "accent";
 }
 
 const { href, title, icon: Icon, hoverColor } = Astro.props;
@@ -12,10 +12,6 @@ const colorClasses = {
   primary: "group-hover:bg-primary/20 group-hover:text-primary",
   secondary: "group-hover:bg-secondary/20 group-hover:text-secondary",
   accent: "group-hover:bg-accent/20 group-hover:text-accent",
-  blue: "group-hover:bg-blue-100 group-hover:text-blue-600",
-  green: "group-hover:bg-green-100 group-hover:text-green-600",
-  purple: "group-hover:bg-purple-100 group-hover:text-purple-600",
-  orange: "group-hover:bg-orange-100 group-hover:text-orange-600",
 };
 ---
 

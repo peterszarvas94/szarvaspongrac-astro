@@ -22,7 +22,7 @@ const menuItems: MenuItem[] = [
       <div class="flex items-center">
         <a
           href="/v2/"
-          class="text-2xl font-bold text-base-content hover:text-primary transition-colors"
+          class="text-2xl font-bold hover:link"
         >
           Szarvas Pongrác
         </a>
@@ -34,7 +34,7 @@ const menuItems: MenuItem[] = [
           menuItems.map((item) => (
             <a
               href={item.href}
-              class="text-base-content/70 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              class="text-base-content/70 hover:link hover:text-base-content px-3 py-2 text-sm font-medium"
             >
               {item.label}
             </a>
