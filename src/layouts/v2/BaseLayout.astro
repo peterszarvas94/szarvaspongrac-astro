@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import Header from "../../components/v2/Header.astro";
 import "../../styles/global.css";
 
@@ -46,23 +47,8 @@ const {
     />
     <title>{title}</title>
 
-    <!-- Speculation Rules for improved performance -->
-    <script type="speculationrules" is:raw is:inline>
-      {
-        "prerender": [
-          {
-            "where": { "href_matches": "/v2/*" },
-            "eagerness": "moderate"
-          }
-        ],
-        "prefetch": [
-          {
-            "where": { "href_matches": "/v2/*" },
-            "eagerness": "conservative"
-          }
-        ]
-      }
-    </script>
+    <!-- view transitions -->
+    <ClientRouter />
   </head>
   <body class="bg-base-200 min-h-screen relative font-inter">
     <Header />
@@ -74,4 +60,3 @@ const {
     </div>
   </body>
 </html>
-

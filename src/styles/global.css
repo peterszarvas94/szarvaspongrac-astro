@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
-@plugin "daisyui";
+@plugin "daisyui" {
+  exclude: properties;
+}
 
 /* Font Face Declarations */
 @font-face {
@@ -32,38 +34,6 @@ body:has([popover]:popover-open) {
   overflow: hidden;
 }
 
-/* Hero section with overlay using pseudo-element */
-.hero-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  pointer-events: none;
-}
-
-/* Vanilla CSS View Transitions */
-@view-transition {
-  navigation: auto;
-}
-
-/* Root view transition for the entire page */
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation-duration: 0.25s;
-}
-
-/* Fade transition for the main content */
-::view-transition-old(root) {
-  animation-name: fade-out;
-}
-
-::view-transition-new(root) {
-  animation-name: fade-in;
-}
-
 /* Animation keyframes for smooth transitions */
 @keyframes fade-out {
   from {
@@ -80,55 +50,5 @@ body:has([popover]:popover-open) {
   }
   to {
     opacity: 1;
-  }
-}
-
-/* Slide transition for navigation elements */
-::view-transition-old(slide),
-::view-transition-new(slide) {
-  animation-duration: 0.3s;
-  animation-timing-function: ease-in-out;
-}
-
-::view-transition-old(slide) {
-  animation-name: slide-out;
-}
-
-::view-transition-new(slide) {
-  animation-name: slide-in;
-}
-
-@keyframes slide-out {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(-100px);
-    opacity: 0;
-  }
-}
-
-@keyframes slide-in {
-  from {
-    transform: translateX(100px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-/* Optional: Smooth transition for images and cards */
-.transition-element {
-  view-transition-name: unique;
-}
-
-/* Reduce motion for users who prefer it */
-@media (prefers-reduced-motion: reduce) {
-  ::view-transition-old(*),
-  ::view-transition-new(*) {
-    animation-duration: 0.1s !important;
   }
 }

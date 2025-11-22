@@ -11,15 +11,21 @@ export default defineConfig({
     assets: "assets",
   },
   image: {
-    // Enable image optimization and caching
     service: {
       entrypoint: "astro/assets/services/sharp",
       config: {
-        // Enable efficient image formats
         formats: ["webp", "avif"],
         quality: 85,
       },
     },
+  },
+  // speculation rules
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: "hover",
+  },
+  experimental: {
+    clientPrerender: true,
   },
   compressHTML: false,
   vite: {
